@@ -8,9 +8,17 @@ describe('StringCalculator', () => {
         expect(calculator.add("")).toBe(0);
     });
     
+    // Simple Test Case: String having a number
+    test('Input: String having a number | Output: number', () => {
+        const calculator = new StringCalculator();
+        expect(calculator.add("100")).toBe(100);
+    });
+
     // Simple Test Case: Sum of Two numbers
     test('Input: Two numbers separated by a single delimeter | Output: sum of two numbers', () => {
         const calculator = new StringCalculator();
         expect(calculator.add("1,5")).toBe(6);
     });
+
+
 });
