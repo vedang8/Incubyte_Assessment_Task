@@ -38,4 +38,12 @@ describe('StringCalculator', () => {
         expect(calculator.add("//;\n1;2;3")).toBe(6);
     });
 
+    // Test Case: Single Negative number
+    test('Input: Negative number | Output: Exception for negative number', () => {
+        const calculator = new StringCalculator();
+        expect(() => {
+            calculator.add('1,-4,3');
+        }).toThrow("Negative numbers are not allowed: -4");
+    });
+
 });
