@@ -60,8 +60,9 @@ class StringCalculator{
             if(number < 0){
                 negativeNumbers.push(number);
             }else{
-                // add the positive number to the sum
-                sum += number;
+                // add the positive number to the sum if less than or equal to 1000
+                if(number <= 1000)
+                   sum += number;
             }
         });
 
