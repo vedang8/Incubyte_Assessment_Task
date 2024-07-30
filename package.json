@@ -2,7 +2,7 @@
   "name": "incubyte_assessment_task",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/stringCalculator.js",
   "directories": {
     "test": "test"
   },
@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "jest":{
+    "testMatch": ["**/test/**/*.test.js"]
   }
 }
