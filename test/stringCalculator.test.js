@@ -26,4 +26,10 @@ describe('StringCalculator', () => {
         expect(calculator.add("1,5,20,100")).toBe(126);
     });
 
+    // Test Case: Comma and Newline separated numbeRS
+    test('Input: Comma and Newline separated numbers | Output: Sum of numbers', () => {
+        const calculator = new StringCalculator();
+        expect(calculator.add("1,5\n50,100\n100,2")).toBe(258);
+    });
+
 });
