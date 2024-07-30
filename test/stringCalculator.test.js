@@ -20,5 +20,10 @@ describe('StringCalculator', () => {
         expect(calculator.add("1,5")).toBe(6);
     });
 
+    // Test Case: Comma separated numbeRS
+    test('Input: Comma separated numbers | Output: Sum of numbers', () => {
+        const calculator = new StringCalculator();
+        expect(calculator.add("1,5,20,100")).toBe(126);
+    });
 
 });
