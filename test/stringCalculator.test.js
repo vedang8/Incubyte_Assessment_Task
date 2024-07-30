@@ -80,5 +80,17 @@ describe('StringCalculator', () => {
         expect(calculator.add("//[******]\n1******2******3******\n3")).toBe(9);
     });
 
+    // Complex Test Case: Long Custom Delimeters with negative numbers
+    test('Input: Numbers separated with the long custom delimeters with negative numbers | Output: Exception of negative number', () => {
+        const calculator = new StringCalculator();
+        expect(() => {
+            calculator.add("//[******]\n1******-2******3******\n3");
+        }).toThrow("Negative numbers are not allowed: -2");
+        expect(() => {
+            calculator.add("//[******]\n1******-2******-3******\n-3");
+        }).toThrow("Negative numbers are not allowed: -2, -3, -3");
+    
+    });
 
+    
 });
