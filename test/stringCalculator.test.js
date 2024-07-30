@@ -20,16 +20,22 @@ describe('StringCalculator', () => {
         expect(calculator.add("1,5")).toBe(6);
     });
 
-    // Test Case: Comma separated numbeRS
+    // Test Case: Comma separated numbers
     test('Input: Comma separated numbers | Output: Sum of numbers', () => {
         const calculator = new StringCalculator();
         expect(calculator.add("1,5,20,100")).toBe(126);
     });
 
-    // Test Case: Comma and Newline separated numbeRS
+    // Test Case: Comma and Newline separated numbers
     test('Input: Comma and Newline separated numbers | Output: Sum of numbers', () => {
         const calculator = new StringCalculator();
         expect(calculator.add("1,5\n50,100\n100,2")).toBe(258);
+    });
+
+    // Test Case: Different delimeters
+    test('Input: Numbers separated with different delimeter | Output: Sum of numbers', () => {
+        const calculator = new StringCalculator();
+        expect(calculator.add("//;\n1;2;3")).toBe(6);
     });
 
 });
