@@ -46,4 +46,11 @@ describe('StringCalculator', () => {
         }).toThrow("Negative numbers are not allowed: -4");
     });
 
+    // Test Case: Multiple Negative Numbers
+    test('Input: Multiple Negative Numbers | Output: Exception for negative number', () => {
+        const calculator = new StringCalculator();
+        expect(() => {
+            calculator.add('1,-4,3,-5,-6');
+        }).toThrow("Negative numbers are not allowed: -4, -5, -6");
+    });
 });
