@@ -46,7 +46,7 @@ describe('StringCalculator', () => {
         }).toThrow("Negative numbers are not allowed: -4");
     });
 
-    // Test Case: Multiple Negative Numbers
+    // Complex Test Case: Multiple Negative Numbers
     test('Input: Multiple Negative Numbers | Output: Exception for negative number', () => {
         const calculator = new StringCalculator();
         expect(() => {
@@ -54,11 +54,16 @@ describe('StringCalculator', () => {
         }).toThrow("Negative numbers are not allowed: -4, -5, -6");
     });
 
-    // Test Case: Delimeters with different lengths
+    // Complex Test Case: Delimeters with different lengths
     test('Input: Numbers separated with the delimeters with different lengths | Output: Sum of numbers', () => {
         const calculator = new StringCalculator();
         expect(calculator.add("//[***]\n1***2***3")).toBe(6);
+        expect(calculator.add("//[***]\n1***2***3\n3")).toBe(9);
     });
 
-
+    // Complex Test Case: Multiple delimeters
+    test('Input: Numbers separated with different delimeters | Output: Sum of numbers', () => {
+        const calculator = new StringCalculator();
+        expect(calculator.add("//[*][%]\n1*2%3%3")).toBe(9);
+    });
 });
