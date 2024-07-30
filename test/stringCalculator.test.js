@@ -38,6 +38,12 @@ describe('StringCalculator', () => {
         expect(calculator.add("//;\n1;2;3")).toBe(6);
     });
 
+    // Test Case: Numbers greater than 1000
+    test('Input: Numbers separated with delimeter | Output: Sum of numbers less than or equal to 1000', () => {
+        const calculator = new StringCalculator();
+        expect(calculator.add("//;\n1;2;1005")).toBe(3);
+    });
+    
     // Test Case: Single Negative number
     test('Input: Negative number | Output: Exception for negative number', () => {
         const calculator = new StringCalculator();
