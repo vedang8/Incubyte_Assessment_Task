@@ -53,4 +53,12 @@ describe('StringCalculator', () => {
             calculator.add('1,-4,3,-5,-6');
         }).toThrow("Negative numbers are not allowed: -4, -5, -6");
     });
+
+    // Test Case: Delimeters with different lengths
+    test('Input: Numbers separated with the delimeters with different lengths | Output: Sum of numbers', () => {
+        const calculator = new StringCalculator();
+        expect(calculator.add("//[***]\n1***2***3")).toBe(6);
+    });
+
+
 });
