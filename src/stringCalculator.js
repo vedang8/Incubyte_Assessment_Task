@@ -34,7 +34,50 @@ class StringCalculator{
             // updating the input to exclude the delimeter part
             numbers = numbers.substring(delimeterEndIndex + 1);
         }
+
+        // creating a regex pattern to split the numbers by any of the delimeters
+        const delimeterPattern = new RegExp(`[${delimeters.join('')}]`);
+
+        // splitting the numbers into an array of number strings
+        const numbersArray = numbers.split(delimeterPattern);
+        
+        // array to store any negative numbers if present
+        const negativeNumbers = [];
+
+        // initializing the sum of numbers
+        let sum = 0;
+
+        // processing each number string in the array
+        numbersArray.forEach(numStr => {
+            // converting the string to an integer
+            const number = parseInt(numStr, 10);
+
+            // skipping the non-numeric values
+            if(isNaN(number))
+                return;
+
+            // collecting the negative numbers
+            if(number < 0){
+                negativeNumbers.push(number);
+            }else{
+                // add the positive number to the sum
+                sum += number;
+            }
+        });
+
+        // throwing an error if negative numbers are found
+        if(negativeNumbers.length > 0){
+            throw new Error('Negative numbers are not allowed: ' + negativeNumbers.join(', '));
+        }
+
+        // return the calculated sum
+        return sum;
     }
+}
+
+// utility function to escape special characters in delimeters
+function escapeRegExp(string){
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 module.exports = StringCalculator;
